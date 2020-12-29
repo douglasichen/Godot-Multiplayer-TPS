@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Montserrat_Small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/Montserrat_Big.tres" type="DynamicFont" id=3]
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.48651
+margin_top = 0.743286
+margin_right = 1.48657
+margin_bottom = 0.743286
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -100.0
+margin_right = 300.0
+margin_bottom = 100.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_right = 600.0
+margin_bottom = 60.0
+custom_fonts/font = ExtResource( 3 )
+text = "Menu:"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 64.0
+margin_right = 600.0
+margin_bottom = 108.0
+alignment = 1
+
+[node name="Host" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 182.0
+margin_right = 267.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 2 )
+text = "Host"
+
+[node name="Connect" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 271.0
+margin_right = 417.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 2 )
+text = "Connect"
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Host" to="." method="_on_Host_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Connect" to="." method="_on_Connect_pressed"]
